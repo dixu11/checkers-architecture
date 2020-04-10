@@ -6,10 +6,6 @@ public class FieldStateData {
 
     private Field field;
 
-    public int getRow() {
-        return field.getCol();
-    }
-
     public FieldStateData(Field field) {
         this.field = field;
     }
@@ -25,6 +21,14 @@ public class FieldStateData {
     @Override
     public int hashCode() {
         return Objects.hash(field);
+    }
+
+
+    public int getRow() {
+        return field.getRow();
+    }
+    public int getColumn() {
+        return field.getColumn();
     }
 
     public Color getFieldColor() {

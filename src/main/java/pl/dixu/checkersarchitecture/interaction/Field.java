@@ -17,7 +17,7 @@ public class Field {
         return row;
     }
 
-    public int getCol() {
+    public int getColumn() {
         return col;
     }
 
