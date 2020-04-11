@@ -2,11 +2,8 @@ package pl.dixu.checkersarchitecture.console.printer;
 
 import org.springframework.stereotype.Component;
 import pl.dixu.checkersarchitecture.interaction.FieldStateData;
-
-import java.util.Collections;
 import java.util.List;
 import java.util.Set;
-import java.util.stream.Collectors;
 
 @Component
 public class BoardPrintingHandler {

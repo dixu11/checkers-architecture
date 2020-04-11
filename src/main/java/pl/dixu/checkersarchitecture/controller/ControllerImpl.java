@@ -2,29 +2,27 @@ package pl.dixu.checkersarchitecture.controller;
 
 import org.springframework.stereotype.Component;
 import pl.dixu.checkersarchitecture.interaction.FieldStateData;
-import pl.dixu.checkersarchitecture.interaction.GameInitializer;
-import pl.dixu.checkersarchitecture.interaction.InformerFacade;
+import pl.dixu.checkersarchitecture.interaction.Interaction;
 
 import java.util.Set;
 
 @Component
 public class ControllerImpl implements Controller {
 
-    private InformerFacade informer;
-    private GameInitializer initializer;
+    private Interaction interaction;
 
-    public ControllerImpl(InformerFacade informer, GameInitializer initializer) {
-        this.informer = informer;
-        this.initializer = initializer;
+    public ControllerImpl(Interaction interaction) {
+        this.interaction = interaction;
     }
+
 
     @Override
     public Set<FieldStateData> getBoardState() {
-        return informer.getBoardState();
+        return interaction.getBoardState();
     }
 
     @Override
     public void startGame() {
-        initializer.startGame();
+        interaction.startGame();
     }
 }
