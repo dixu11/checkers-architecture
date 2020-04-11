@@ -31,11 +31,12 @@ public class Field {
         if (o == null || getClass() != o.getClass()) return false;
         Field field = (Field) o;
         return row == field.row &&
-                col == field.col;
+                col == field.col &&
+                color == field.color;
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(row, col);
+        return Objects.hash(row, col, color);
     }
 }

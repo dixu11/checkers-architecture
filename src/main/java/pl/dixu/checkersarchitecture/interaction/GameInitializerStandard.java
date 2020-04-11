@@ -1,21 +1,25 @@
 package pl.dixu.checkersarchitecture.interaction;
 
 import org.springframework.stereotype.Component;
-import pl.dixu.checkersarchitecture.repository.Repository;
+import pl.dixu.checkersarchitecture.repository.CheckerData;
+import pl.dixu.checkersarchitecture.repository.CheckerRepository;
+
+import java.util.Set;
 
 @Component
 public class GameInitializerStandard implements GameInitializer {
 
-    private Repository repository;
+    private CheckerRepository checkerRepository;
     private CheckerFactory checkerFactory;
 
-    public GameInitializerStandard(Repository repository, CheckerFactory checkerFactory) {
-        this.repository = repository;
+    public GameInitializerStandard(CheckerRepository checkerRepository, CheckerFactory checkerFactory) {
+        this.checkerRepository = checkerRepository;
         this.checkerFactory = checkerFactory;
     }
 
     @Override
     public void startGame() {
-        //todo - > build checkers
+        Set<CheckerData> checkers = checkerFactory.buildStartingCheckers();
+        checkerRepository.save(checkers);
     }
 }

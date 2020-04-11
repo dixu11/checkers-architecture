@@ -3,6 +3,7 @@ package pl.dixu.checkersarchitecture.controller;
 import org.springframework.stereotype.Component;
 import pl.dixu.checkersarchitecture.interaction.FieldStateData;
 import pl.dixu.checkersarchitecture.interaction.Interaction;
+import pl.dixu.checkersarchitecture.interaction.MoveEvent;
 
 import java.util.Set;
 
@@ -15,7 +16,6 @@ public class ControllerImpl implements Controller {
         this.interaction = interaction;
     }
 
-
     @Override
     public Set<FieldStateData> getBoardState() {
         return interaction.getBoardState();
@@ -24,5 +24,10 @@ public class ControllerImpl implements Controller {
     @Override
     public void startGame() {
         interaction.startGame();
+    }
+
+    @Override
+    public void move(MoveEvent moveEvent) {
+        interaction.move(moveEvent);
     }
 }
