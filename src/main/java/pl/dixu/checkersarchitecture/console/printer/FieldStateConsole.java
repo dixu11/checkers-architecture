@@ -1,6 +1,6 @@
 package pl.dixu.checkersarchitecture.console.printer;
 
-import pl.dixu.checkersarchitecture.interaction.FieldStateData;
+import pl.dixu.checkersarchitecture.entity.FieldStateData;
 
 public class FieldStateConsole implements Comparable<FieldStateConsole> {
 

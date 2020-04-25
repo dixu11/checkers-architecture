@@ -1,12 +1,8 @@
-package pl.dixu.checkersarchitecture.interaction;
+package pl.dixu.checkersarchitecture.entity;
 
-import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import org.springframework.util.Assert;
-import pl.dixu.checkersarchitecture.repository.CheckerData;
 
-import java.util.HashSet;
 import java.util.Set;
 import java.util.stream.Collectors;
 

@@ -1,7 +1,7 @@
 package pl.dixu.checkersarchitecture.console.printer;
 
 import org.springframework.stereotype.Component;
-import pl.dixu.checkersarchitecture.interaction.FieldStateData;
+import pl.dixu.checkersarchitecture.entity.FieldStateData;
 
 import java.util.List;
 import java.util.Set;

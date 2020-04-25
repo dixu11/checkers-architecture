@@ -1,16 +1,15 @@
-package pl.dixu.checkersarchitecture.interaction;
+package pl.dixu.checkersarchitecture.entity;
 
 import org.springframework.stereotype.Component;
 
-import java.util.HashSet;
 import java.util.Set;
 
 @Component
 public class InformerFacade {
 
-    private FieldStateDataFactory factory;
+    private ActualBoardStateFactory factory;
 
-    public InformerFacade(FieldStateDataFactory factory) {
+    public InformerFacade(ActualBoardStateFactory factory) {
         this.factory = factory;
     }
 

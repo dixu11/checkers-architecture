@@ -1,13 +1,13 @@
-package pl.dixu.checkersarchitecture.interaction;
+package pl.dixu.checkersarchitecture.entity;
 
 import java.util.Objects;
 
-public class Field {
+public class CheckerData {
     private final int row;
     private final int col;
     private final Color color;
 
-    public Field(int row, int col, Color color) {
+    public CheckerData(int row, int col, Color color) {
         this.row = row;
         this.col = col;
         this.color = color;
@@ -17,7 +17,7 @@ public class Field {
         return row;
     }
 
-    public int getColumn() {
+    public int getCol() {
         return col;
     }
 
@@ -29,10 +29,10 @@ public class Field {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        Field field = (Field) o;
-        return row == field.row &&
-                col == field.col &&
-                color == field.color;
+        CheckerData that = (CheckerData) o;
+        return row == that.row &&
+                col == that.col &&
+                color == that.color;
     }
 
     @Override

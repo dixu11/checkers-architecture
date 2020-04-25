@@ -1,12 +1,11 @@
-package pl.dixu.checkersarchitecture.interaction;
+package pl.dixu.checkersarchitecture.entity;
 
 import org.springframework.stereotype.Component;
-import pl.dixu.checkersarchitecture.repository.CheckerData;
 
 import java.util.HashSet;
 import java.util.Set;
 
-import static pl.dixu.checkersarchitecture.interaction.Color.WHITE;
+import static pl.dixu.checkersarchitecture.entity.Color.WHITE;
 
 @Component
 public class CheckerFactoryWhiteFirst implements CheckerFactory {

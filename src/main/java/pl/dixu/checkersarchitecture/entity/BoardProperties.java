@@ -1,4 +1,4 @@
-package pl.dixu.checkersarchitecture.interaction;
+package pl.dixu.checkersarchitecture.entity;
 
 public class BoardProperties {
     public static final int ROWS_COUNT = 8;

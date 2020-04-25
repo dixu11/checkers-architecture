@@ -1,4 +1,4 @@
-package pl.dixu.checkersarchitecture.interaction;
+package pl.dixu.checkersarchitecture.entity;
 
 public class MoveEvent {
     private final int fromRow;

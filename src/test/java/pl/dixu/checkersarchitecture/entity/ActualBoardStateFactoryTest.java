@@ -1,20 +1,15 @@
-package pl.dixu.checkersarchitecture.interaction;
+package pl.dixu.checkersarchitecture.entity;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.mockito.Mockito;
-import org.springframework.stereotype.Repository;
-import pl.dixu.checkersarchitecture.repository.CheckerData;
-import pl.dixu.checkersarchitecture.repository.CheckerRepository;
-import pl.dixu.checkersarchitecture.repository.InMemoryCheckerRepository;
 
-import java.util.HashSet;
 import java.util.Set;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-class FieldStateDataFactoryTest {
-    private FieldStateDataFactory factory;
+class ActualBoardStateFactoryTest {
+    private ActualBoardStateFactory factory;
     private CheckerRepository repositoryMock;
     private FieldsModel modelMock;
 
@@ -22,7 +17,7 @@ class FieldStateDataFactoryTest {
     void setUp() {
         modelMock = Mockito.mock(FieldsModel.class);
         repositoryMock = Mockito.mock(CheckerRepository.class);
-        factory = new FieldStateDataFactory(modelMock,repositoryMock);
+        factory = new ActualBoardStateFactory(modelMock,repositoryMock);
     }
 
     @Test

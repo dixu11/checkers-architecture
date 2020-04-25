@@ -1,5 +1,7 @@
 package pl.dixu.checkersarchitecture.repository;
 
+import pl.dixu.checkersarchitecture.entity.CheckerData;
+
 import java.util.HashSet;
 import java.util.Set;
 

@@ -2,11 +2,10 @@ package pl.dixu.checkersarchitecture.repository;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import pl.dixu.checkersarchitecture.interaction.Color;
+import pl.dixu.checkersarchitecture.entity.CheckerData;
+import pl.dixu.checkersarchitecture.entity.Color;
 
 import java.util.Set;
-
-import static org.junit.jupiter.api.Assertions.*;
 
 class InMemoryCheckerRepositoryTest {
 

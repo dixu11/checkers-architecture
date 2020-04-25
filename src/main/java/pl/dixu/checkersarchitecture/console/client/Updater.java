@@ -3,7 +3,6 @@ package pl.dixu.checkersarchitecture.console.client;
 import org.springframework.stereotype.Component;
 import pl.dixu.checkersarchitecture.console.printer.BoardPrintingHandler;
 import pl.dixu.checkersarchitecture.console.printer.PrinterException;
-import pl.dixu.checkersarchitecture.controller.Controller;
 
 @Component
 public class Updater {

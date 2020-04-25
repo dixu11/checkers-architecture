@@ -1,30 +1,20 @@
-package pl.dixu.checkersarchitecture.interaction;
-
-import pl.dixu.checkersarchitecture.repository.CheckerData;
+package pl.dixu.checkersarchitecture.entity;
 
 import java.util.Objects;
-
+//immutable
 public class FieldStateData {
 
-    private Field field;
-    private CheckerData checkerData = null;
+    private final Field field;
+    private final CheckerData checkerData;
 
     public FieldStateData(Field field) {
         this.field = field;
+        checkerData = null;
     }
 
-    public CheckerData getCheckerData() {
-        return checkerData;
-    }
-
-    public void setCheckerData(CheckerData checkerData) {
+    public FieldStateData(Field field, CheckerData checkerData) {
+        this.field = field;
         this.checkerData = checkerData;
-    }
-
-    public void addCheckerIfPositionsMatchField(CheckerData newChecker) {
-        if (field.getRow() == newChecker.getRow() && field.getColumn() == newChecker.getCol()) {
-            checkerData = newChecker;
-        }
     }
 
     public int getRow() {
@@ -63,5 +53,13 @@ public class FieldStateData {
 
     public Field getField() {
         return field;
+    }
+
+    public FieldStateData putChecker(CheckerData checkerData) {
+        return new FieldStateData(field,checkerData);
+    }
+
+    public boolean cordsMatches(CheckerData checker) {
+        return field.getRow() == checker.getRow() && field.getColumn() == checker.getCol();
     }
 }

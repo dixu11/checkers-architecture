@@ -1,8 +1,6 @@
-package pl.dixu.checkersarchitecture.interaction;
+package pl.dixu.checkersarchitecture.entity;
 
 import org.springframework.stereotype.Component;
-import pl.dixu.checkersarchitecture.repository.CheckerData;
-import pl.dixu.checkersarchitecture.repository.CheckerRepository;
 
 import java.util.Set;
 

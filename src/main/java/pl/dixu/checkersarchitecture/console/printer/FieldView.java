@@ -1,6 +1,6 @@
 package pl.dixu.checkersarchitecture.console.printer;
 
-import pl.dixu.checkersarchitecture.interaction.Color;
+import pl.dixu.checkersarchitecture.entity.Color;
 
 public enum FieldView{
     BLACK_EMPTY("#"), WHITE_EMPTY("O"), BLACK_CHECKER("X"), WHITE_CHECKER("@");

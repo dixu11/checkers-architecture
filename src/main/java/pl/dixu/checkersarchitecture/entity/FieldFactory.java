@@ -1,4 +1,4 @@
-package pl.dixu.checkersarchitecture.interaction;
+package pl.dixu.checkersarchitecture.entity;
 
 import java.util.Collection;
 import java.util.HashSet;
@@ -6,7 +6,7 @@ import java.util.Set;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 
-import static pl.dixu.checkersarchitecture.interaction.Color.WHITE;
+import static pl.dixu.checkersarchitecture.entity.Color.WHITE;
 
 public class FieldFactory {
 
