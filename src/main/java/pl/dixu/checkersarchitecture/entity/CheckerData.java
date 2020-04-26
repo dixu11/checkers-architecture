@@ -39,4 +39,13 @@ public class CheckerData {
     public int hashCode() {
         return Objects.hash(row, col, color);
     }
+
+    @Override
+    public String toString() {
+        return "CheckerData{" +
+                "row=" + row +
+                ", col=" + col +
+                ", color=" + color +
+                '}';
+    }
 }

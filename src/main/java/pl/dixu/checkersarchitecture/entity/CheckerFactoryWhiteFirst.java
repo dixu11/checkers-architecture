@@ -9,13 +9,19 @@ import static pl.dixu.checkersarchitecture.entity.Color.WHITE;
 
 @Component
 public class CheckerFactoryWhiteFirst implements CheckerFactory {
-
     private static final Color INITIAL_COLOR = WHITE;
+
     private static final int FIRST_PLAYER_ROW_INDEX = 0;
     private static final int SECOND_PLAYER_ROW_INDEX = 5;
 
 
-    public Set<CheckerData> buildStartingCheckers() {
+    @Override
+    public BoardState buildStartingBoardState() {
+        Set<CheckerData> checkers = buildStartingCheckers();
+        return new BoardState(checkers, WHITE);
+    }
+
+    private Set<CheckerData> buildStartingCheckers() {
         Set<CheckerData> checkers = buildPlayerOf(INITIAL_COLOR);
         checkers.addAll(buildPlayerOf(INITIAL_COLOR.nextColor()));
         return checkers;
@@ -48,7 +54,5 @@ public class CheckerFactoryWhiteFirst implements CheckerFactory {
         }
         return row;
     }
-
-
 
 }

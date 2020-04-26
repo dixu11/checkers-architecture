@@ -1,40 +1,41 @@
 package pl.dixu.checkersarchitecture.useCase;
 
 import org.springframework.stereotype.Component;
+import pl.dixu.checkersarchitecture.adapters.Presenter;
 import pl.dixu.checkersarchitecture.entity.*;
-import pl.dixu.checkersarchitecture.entity.CheckerData;
 
-import java.util.Set;
 //główna klasa warstwy przypadków użycia z metodami niezależnych przypadków  interakcji z grą
 @Component
 public  class UseCaseInteractor {
-
-    //old
-    private GameInitializer initializer;
-    private InformerFacade informer;
-    private Executor executor;
-
     private DataAccess dataAccess;
     private CheckerGame checkerGame;
+    private Presenter presenter;
 
-
-
-    public UseCaseInteractor(GameInitializer initializer, InformerFacade informer, Executor executor) {
-        this.initializer = initializer;
-        this.informer = informer;
-        this.executor = executor;
+    public UseCaseInteractor(CheckerGame checkerGame, DataAccess dataAccess, Presenter presenter) {
+        this.checkerGame = checkerGame;
+        this.dataAccess = dataAccess;
+        this.presenter = presenter;
     }
 //pobieranie aktualnego stanu gry zwraca immutable strukturę danych określających pola i stojące na nich figury
-    public Set<FieldStateData> getBoardState() {
-        Set<CheckerData> checkers = dataAccess.getCheckers();
-        return checkerGame.getBoardState(checkers);
+    public void startGame() {
+        BoardState startingBoardState = checkerGame.getStartingBoard();
+        dataAccess.save(startingBoardState);
     }
 
-    public void startGame() {
-        initializer.startGame();
+    public void printBoard() {
+        presenter.showBoard(getBoardState());
     }
 
     public void move(MoveEvent moveEvent) {
-        executor.move(moveEvent);
+        MoveResult moveResult = checkerGame.move(moveEvent, getBoardState());
+        if (moveResult.wasExecuted()) {
+            dataAccess.save(moveResult.getBoardState());
+        }
+        presenter.showMove(moveResult);
+    }
+
+    private BoardState getBoardState() {
+        return dataAccess.getBoardState();
     }
 }
+

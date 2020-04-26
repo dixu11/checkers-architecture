@@ -1,24 +1,28 @@
 package pl.dixu.checkersarchitecture.repository;
 
-import pl.dixu.checkersarchitecture.entity.CheckerData;
+import org.springframework.stereotype.Component;
+import pl.dixu.checkersarchitecture.entity.BoardState;
+import pl.dixu.checkersarchitecture.useCase.DataAccess;
 
-import java.util.HashSet;
 import java.util.Set;
+@Component
+public class InMemoryCheckerRepository implements DataAccess {
 
-public class InMemoryCheckerRepository implements CheckerRepository {
-
-    private Set<CheckerData> checkers;
+    private BoardState boardState;
 
     public InMemoryCheckerRepository() {
-        checkers = new HashSet<>();
+
     }
 
-    @Override
-    public void save(Set<CheckerData> newCheckers) {
-        checkers.addAll(newCheckers);
+    public void save(BoardState boardState) {
+        this.boardState = boardState;
     }
 
-    public Set<CheckerData> getCheckers() {
-        return new HashSet<>(checkers);
+    public BoardState getBoardState() {
+        return boardState;
+    }
+
+    public void setBoardState(BoardState boardState) {
+        this.boardState = boardState;
     }
 }

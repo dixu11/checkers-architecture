@@ -2,21 +2,23 @@ package pl.dixu.checkersarchitecture.entity;
 
 import org.springframework.stereotype.Component;
 
-import java.util.Set;
-
 //fasada warsty entity
 @Component
 public class CheckerGame {
 
-    private ActualBoardStateFactory factory;
+    private CheckerFactory checkerFactory;
+    private CheckerInteractor manipulator;
 
-    public CheckerGame(ActualBoardStateFactory factory) {
-        this.factory = factory;
+    public CheckerGame( CheckerFactory checkerFactory, CheckerInteractor manipulator) {
+        this.checkerFactory = checkerFactory;
+        this.manipulator = manipulator;
     }
 
-    public Set<FieldStateData> getBoardState(Set<CheckerData> checkers) {
-       return factory.buildActualBoardState(checkers);
+    public BoardState getStartingBoard() {
+       return checkerFactory.buildStartingBoardState();
     }
 
-
+    public MoveResult move(MoveEvent moveEvent, BoardState boardState) {
+        return manipulator.move(moveEvent, boardState);
+    }
 }

@@ -7,9 +7,11 @@ import pl.dixu.checkersarchitecture.entity.Color;
 
 import java.util.Set;
 
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
 class InMemoryCheckerRepositoryTest {
 
-    private CheckerRepository checkerRepository;
+    private InMemoryCheckerRepository checkerRepository;
 
     @BeforeEach
     void setUp() {
@@ -24,8 +26,8 @@ class InMemoryCheckerRepositoryTest {
                 new CheckerData(rowNr, 5, Color.WHITE),
                 new CheckerData(rowNr, 7, Color.WHITE));
 
-        checkerRepository.save(expectedCheckers);
+//        checkerRepository.save(expectedCheckers);
 
-        assertEquals(expectedCheckers, checkerRepository.getCheckers());
+        assertEquals(expectedCheckers, checkerRepository.getBoardState());
     }
 }

@@ -1,10 +1,8 @@
 package pl.dixu.checkersarchitecture.useCase;
 
-import pl.dixu.checkersarchitecture.entity.CheckerData;
-
-import java.util.Set;
+import pl.dixu.checkersarchitecture.entity.BoardState;
 
 public interface DataAccess {
-    void save(Set<CheckerData> checkers);
-    Set<CheckerData> getCheckers();
+    void save(BoardState boardState);
+    BoardState getBoardState();
 }
