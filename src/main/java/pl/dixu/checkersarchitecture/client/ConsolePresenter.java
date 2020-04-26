@@ -21,6 +21,6 @@ public class ConsolePresenter implements Presenter {
 
     @Override
     public void showMove(MoveResult moveResult) {
-        throw new UnsupportedOperationException("Not yet implemented"); //todo implement
+        showBoard(moveResult.getBoardState());
     }
 }

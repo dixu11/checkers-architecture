@@ -19,7 +19,7 @@ class CheckerInteractorTest {
         MoveResult actualResult = interactor.move(moveEvent, boardState);
 
         //than
-        assertTrue(actualResult.wasExecuted());
         assertTrue(actualResult.hasCheckerOnField(3,0));
+        assertTrue(actualResult.wasExecuted());
     }
 }

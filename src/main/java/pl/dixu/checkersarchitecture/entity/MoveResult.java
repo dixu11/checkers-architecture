@@ -2,15 +2,24 @@ package pl.dixu.checkersarchitecture.entity;
 
 //result of checker move, contains info about effect and new state
 public class MoveResult {
+
+    private BoardState boardState;
+    private boolean wasExecuted;
+
+    public MoveResult(BoardState boardState, boolean wasExecuted) {
+        this.boardState = boardState;
+        this.wasExecuted = wasExecuted;
+    }
+
     public boolean wasExecuted() {
-        return false;
+        return wasExecuted;
     }
 
     public boolean hasCheckerOnField(int row, int col) {
-        return false;
+        return boardState.hasChecker(row, col);
     }
 
     public BoardState getBoardState() {
-        return null;
+        return boardState;
     }
 }

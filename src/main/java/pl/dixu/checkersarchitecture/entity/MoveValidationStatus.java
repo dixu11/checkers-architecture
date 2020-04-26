@@ -4,6 +4,7 @@ public enum  MoveValidationStatus {
     OUTSIDE_BOARD(false),
     NO_CHECKER(false),
     NOT_YOUR_CHECKER(false),
+    NOT_VALID_MOVE(false),
     FIELD_BLOCKED(false),
     MOVE(true),
     ATTACK(true),

@@ -48,4 +48,8 @@ public class CheckerData {
                 ", color=" + color +
                 '}';
     }
+
+    public boolean isOnCords(int row, int col) {
+        return this.row == row && this.col == col;
+    }
 }
