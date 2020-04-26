@@ -35,7 +35,7 @@ public class CheckerInteractor {
     }
 
     private boolean isCorrectCheckerSelected() {
-
+        return true;
     }
 
 }
