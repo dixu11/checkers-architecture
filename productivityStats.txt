@@ -1,1 +1,2 @@
 Branch finished in about 2 hours at 521 lines of code
+spawning checkers - about 5 hours, 626 lines
