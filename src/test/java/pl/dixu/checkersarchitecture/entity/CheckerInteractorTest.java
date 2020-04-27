@@ -13,7 +13,7 @@ class CheckerInteractorTest {
     void move_should_return_correct_new_state_for_correct_move() {
         //given
         BoardState boardState = factory.buildStartingBoardState();
-        MoveEvent moveEvent = new MoveEvent(2, 1, 3, 0, Color.WHITE);
+        MoveEvent moveEvent = new MoveEvent(2, 1, 3, 0);
 
         //when
         MoveResult actualResult = interactor.move(moveEvent, boardState);

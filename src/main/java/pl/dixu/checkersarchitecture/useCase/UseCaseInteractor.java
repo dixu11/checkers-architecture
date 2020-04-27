@@ -20,22 +20,27 @@ public  class UseCaseInteractor {
     public void startGame() {
         BoardState startingBoardState = checkerGame.getStartingBoard();
         dataAccess.save(startingBoardState);
+        presenter.showBoard(startingBoardState);
     }
 
     public void printBoard() {
         presenter.showBoard(getBoardState());
     }
 
+    private BoardState getBoardState() {
+        return dataAccess.getBoardState();
+    }
+
     public void move(MoveEvent moveEvent) {
         MoveResult moveResult = checkerGame.move(moveEvent, getBoardState());
+        saveMoveIfExecuted(moveResult);
+        presenter.executeMove(moveResult);
+    }
+
+    private void saveMoveIfExecuted(MoveResult moveResult) {
         if (moveResult.wasExecuted()) {
             dataAccess.save(moveResult.getBoardState());
         }
-        presenter.showMove(moveResult);
-    }
-
-    private BoardState getBoardState() {
-        return dataAccess.getBoardState();
     }
 }
 

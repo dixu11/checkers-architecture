@@ -12,14 +12,16 @@ class BoardStateView {
 
     private Set<CheckerView> checkers;
     private Color actualPlayer;
+    private InputToIndexTranslator indexTranslator;
 
     public BoardStateView(Set<CheckerView> checkers, Color actualPlayer) {
         this.checkers = checkers;
         this.actualPlayer = actualPlayer;
+        indexTranslator = new InputToIndexTranslator();
     }
 
     public void printBoard() {
-        printOnlyBoard();
+        printBoardWithMarginals();
         printWhoPlays();
     }
 
@@ -27,13 +29,27 @@ class BoardStateView {
         System.out.println("It is turn of player: " + FieldView.getViewForChecker(actualPlayer));
     }
 
-    private void printOnlyBoard() {
+    private void printBoardWithMarginals() {
+        printColumnMarginals();
         for (int row = 0; row < ROW_COUNT; row++) {
+            printRowMarginalFor(row);
             for (int col = 0; col < COLUMN_COUNT; col++) {
                 printField(row, col);
             }
             System.out.println();
         }
+    }
+
+    private void printColumnMarginals() {
+        System.out.print("  ");
+        for (int col = 0; col < 8; col++) {
+            System.out.printf("%2d",indexTranslator.translateIndexColToInput(col));
+        }
+        System.out.println();
+    }
+
+    private void printRowMarginalFor(int row) {
+        System.out.printf("%2d ",indexTranslator.translateIndexRowToInput(row));
     }
 
     private void printField(int row, int col) {

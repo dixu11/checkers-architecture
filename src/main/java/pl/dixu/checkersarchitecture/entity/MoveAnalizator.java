@@ -12,7 +12,7 @@ class MoveAnalizator {
         this.boardState = boardState;
     }
 
-    public void analizeMove() {
+    void analizeMove() {
         validationStatus = validateMove();
         if (!validationStatus.isValid()) {
             return;
@@ -62,18 +62,16 @@ class MoveAnalizator {
         return boardState.hasChecker(moveEvent.getToRow(),moveEvent.getToColumn());
     }
 
-
-
     private CheckerData getSelectedChecker() {
         return boardState.findChecker(moveEvent.getFromRow(), moveEvent.getFromColumn())
                 .orElseThrow();
     }
 
-    public MoveValidationStatus getValidationStatus() {
-        return validationStatus;
+    MoveType getMoveType() {
+        return moveType;
     }
 
-    public MoveType getMoveType() {
-        return moveType;
+    boolean isMoveValid() {
+        return validationStatus.isValid();
     }
 }

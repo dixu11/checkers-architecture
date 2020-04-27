@@ -8,5 +8,5 @@ import pl.dixu.checkersarchitecture.entity.MoveResult;
 public interface Presenter {
      void showBoard(BoardState boardState);
 
-     void showMove(MoveResult moveResult);
+     void executeMove(MoveResult moveResult);
 }

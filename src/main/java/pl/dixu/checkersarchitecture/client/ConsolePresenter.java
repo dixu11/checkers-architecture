@@ -16,11 +16,23 @@ class ConsolePresenter implements Presenter {
 
     public void showBoard(BoardState boardState){
         BoardStateView boardStateView = translator.convertToBoardStateView(boardState);
+        clearScreen();
         boardStateView.printBoard();
     }
 
     @Override
-    public void showMove(MoveResult moveResult) {
+    public void executeMove(MoveResult moveResult) {
         showBoard(moveResult.getBoardState());
     }
+
+    private void clearScreen() {
+        for (int i = 0; i < 25; i++) {
+            System.out.println();
+        }
+    }
+
+
+
+
+
 }

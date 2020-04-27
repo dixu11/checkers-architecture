@@ -17,10 +17,6 @@ public class Controller {
         useCaseInteractor.startGame();
     }
 
-    public void printBoard() {
-        useCaseInteractor.printBoard();
-    }
-
     public void move(MoveEvent moveEvent) {
         useCaseInteractor.move(moveEvent);
     }
