@@ -1,5 +1,5 @@
 package pl.dixu.checkersarchitecture.entity;
 
-public enum MoveType {
+enum MoveType {
     STEP, ONE_ATTACK, INVALID;
 }

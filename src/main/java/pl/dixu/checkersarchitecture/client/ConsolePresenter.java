@@ -6,7 +6,7 @@ import pl.dixu.checkersarchitecture.entity.BoardState;
 import pl.dixu.checkersarchitecture.entity.MoveResult;
 
 @Component
-public class ConsolePresenter implements Presenter {
+class ConsolePresenter implements Presenter {
 
     private CheckerDataTranslator translator;
 

@@ -1,6 +1,6 @@
 package pl.dixu.checkersarchitecture.entity;
 
-public interface CheckerFactory {
+interface CheckerFactory {
 
     BoardState buildStartingBoardState();
 }

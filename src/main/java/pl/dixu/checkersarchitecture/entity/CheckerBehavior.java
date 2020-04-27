@@ -2,7 +2,7 @@ package pl.dixu.checkersarchitecture.entity;
 
 import static java.lang.Math.abs;
 
-public class CheckerBehavior {
+class CheckerBehavior {
     private CheckerData checker;
 
     public CheckerBehavior(CheckerData checker) {

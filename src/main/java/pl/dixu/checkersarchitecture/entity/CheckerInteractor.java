@@ -4,7 +4,7 @@ import org.springframework.stereotype.Component;
 
 //entity component for moving pieces
 @Component
-public class CheckerInteractor {
+class CheckerInteractor {
 
     private BoardState boardState;
     private MoveEvent moveEvent;

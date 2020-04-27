@@ -2,7 +2,7 @@ package pl.dixu.checkersarchitecture.client;
 
 import pl.dixu.checkersarchitecture.entity.Color;
 
-public enum FieldView{
+enum FieldView{
     BLACK_EMPTY("#"), WHITE_EMPTY(" "), BLACK_CHECKER("X"), WHITE_CHECKER("O");
     private String view;
 

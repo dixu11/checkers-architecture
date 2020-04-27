@@ -1,6 +1,6 @@
 package pl.dixu.checkersarchitecture.entity;
 
-public enum  MoveValidationStatus {
+enum  MoveValidationStatus {
     OUTSIDE_BOARD(false),
     NO_CHECKER(false),
     NOT_YOUR_CHECKER(false),

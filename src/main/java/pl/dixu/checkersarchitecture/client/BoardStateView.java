@@ -5,7 +5,7 @@ import java.util.Optional;
 import java.util.Set;
 import static pl.dixu.checkersarchitecture.entity.Color.WHITE;
 
-public class BoardStateView {
+class BoardStateView {
     private static final int ROW_COUNT = 8;
     private static final int COLUMN_COUNT = 8;
     private static final Color INITIAL_COLOR = WHITE;

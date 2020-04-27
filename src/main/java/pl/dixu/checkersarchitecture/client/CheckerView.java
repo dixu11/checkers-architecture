@@ -3,7 +3,7 @@ package pl.dixu.checkersarchitecture.client;
 import pl.dixu.checkersarchitecture.entity.CheckerData;
 import pl.dixu.checkersarchitecture.entity.Color;
 
-public class CheckerView {
+class CheckerView {
 
     private final CheckerData checker;
 

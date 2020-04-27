@@ -1,6 +1,6 @@
 package pl.dixu.checkersarchitecture.entity;
 
-public class MoveAnalizator {
+class MoveAnalizator {
 
     private MoveEvent moveEvent;
     private BoardState boardState;
@@ -22,7 +22,6 @@ public class MoveAnalizator {
 
     private MoveValidationStatus validateMove() {
         if (!cordsAreInsideBoard()) {
-
             return MoveValidationStatus.OUTSIDE_BOARD;
         }
         if (!hasChecker()) {

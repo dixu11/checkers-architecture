@@ -1,10 +1,9 @@
 package pl.dixu.checkersarchitecture.entity;
 
 import java.util.HashSet;
-import java.util.Optional;
 import java.util.Set;
 
-public class BoardStateBehavior {
+class BoardStateBehavior {
 
     private BoardState boardState;
 

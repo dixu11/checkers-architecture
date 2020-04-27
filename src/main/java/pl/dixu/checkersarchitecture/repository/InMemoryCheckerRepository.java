@@ -6,7 +6,7 @@ import pl.dixu.checkersarchitecture.useCase.DataAccess;
 
 import java.util.Set;
 @Component
-public class InMemoryCheckerRepository implements DataAccess {
+class InMemoryCheckerRepository implements DataAccess {
 
     private BoardState boardState;
 

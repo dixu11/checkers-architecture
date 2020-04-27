@@ -8,7 +8,7 @@ import java.util.Set;
 import static pl.dixu.checkersarchitecture.entity.Color.WHITE;
 
 @Component
-public class CheckerFactoryWhiteFirst implements CheckerFactory {
+class CheckerFactoryWhiteFirst implements CheckerFactory {
     private static final Color INITIAL_COLOR = WHITE;
 
     private static final int FIRST_PLAYER_ROW_INDEX = 0;

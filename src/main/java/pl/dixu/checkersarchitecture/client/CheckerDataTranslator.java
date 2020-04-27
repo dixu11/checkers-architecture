@@ -7,7 +7,7 @@ import java.util.Set;
 import java.util.stream.Collectors;
 
 @Component
-public class CheckerDataTranslator {
+class CheckerDataTranslator {
 
     public BoardStateView convertToBoardStateView(BoardState boardState) {
         Set<CheckerView> checkerViews = convertToConsoleCheckerView(boardState.getCheckers());
