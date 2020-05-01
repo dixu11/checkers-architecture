@@ -5,10 +5,12 @@ public class MoveResult {
 
     private BoardState boardState;
     private boolean wasExecuted;
+    private MoveValidationStatus validationStatus;
 
-    public MoveResult(BoardState boardState, boolean wasExecuted) {
+    public MoveResult(BoardState boardState, boolean wasExecuted, MoveValidationStatus validationStatus) {
         this.boardState = boardState;
         this.wasExecuted = wasExecuted;
+        this.validationStatus = validationStatus;
     }
 
     public boolean wasExecuted() {
@@ -21,5 +23,9 @@ public class MoveResult {
 
     public BoardState getBoardState() {
         return boardState;
+    }
+
+    public MoveValidationStatus getValidation() {
+        return validationStatus;
     }
 }

@@ -24,9 +24,9 @@ class CheckerInteractor {
     private MoveResult executeMoveIfValid(MoveAnalizator analizator) {
         if (analizator.isMoveValid()) {
             BoardState newBoardState = executeMove(analizator);
-            return new MoveResult(newBoardState, true);
+            return new MoveResult(newBoardState, true, analizator.getValidationStatus());
         }
-        return new MoveResult(boardState, false);
+        return new MoveResult(boardState, false, analizator.getValidationStatus());
     }
 
     private BoardState executeMove(MoveAnalizator analizator) {

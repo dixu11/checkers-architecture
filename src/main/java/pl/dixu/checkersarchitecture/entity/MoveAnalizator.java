@@ -74,4 +74,8 @@ class MoveAnalizator {
     boolean isMoveValid() {
         return validationStatus.isValid();
     }
+
+    MoveValidationStatus getValidationStatus() {
+        return validationStatus;
+    }
 }
